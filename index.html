@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>Index</title>
+	<link href="./CSS/style.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="order.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+	</head>
+<header>
+	<img  alt= "Delicatessen"  src="./photos/delicatessen.jpg">
+</header>
+	
+
+<body>
+	<body>
+		<form onsubmit="valInfo(); return false" name="myform">
+	   <div class="box">
+	   <table class="box">
+						<tr><th colspan="2">Enter the following information</th></tr>
+						<tr>
+							<td>First name<br/> (alphabetical characters or hyphens):</td>
+							<td><input  type="text"  name="fname" size="25" maxlength="20" pattern="[A-za-z-]+"  id="fname"/></td>
+						</tr>     
+   
+						<tr>
+						  <td>Last name<br/> (alphabetical characters or hyphens):</td>
+						  <td><input type="text"  name="lname" size="25" maxlength="20" pattern="[A-za-z-]+" id="lname" /></td>
+						</tr>
+						<tr>
+						  <td>Email:</td><td><input type="email"  name="email" size="25" maxlength="25" id="email"></td>
+					   </tr> 
+   
+						<tr>
+							<td>Address:</td>
+							<td><input type="text"  name="address" size="25" id="address"/></td>
+						 </tr>
+   
+						 <tr>     
+						   <td>Phone number<br/>(e.g. 999-999-9999):</td>
+						   <td><input type="tel"  name="phone" size="25" maxlength="12" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"id="phone"/></td>  
+					   </tr>
+						   
+				   </table >
+	   </div>
+	   <!-----order pizzas   ----->
+	   
+	   <div>	
+		   <hr/>
+			   <h2>Pizzas</h2>
+   
+			   <hr> 
+			   <table class="center">
+			   <tr>
+				   <th></th>
+				   <th ><input type="radio" name="type" value="Super Cheesy" id="Chessy" checked>Super Cheesy</th>
+				   
+				   <th ><input type="radio" name="type" value="Extra Meaty" id="Extra Meaty" />Extra Meaty</th>
+				   
+				   <th ><input type="radio" name="type" value="Really Veggie" id="Really Veggie"/>Really Veggie</th>
+				   <th></th>
+			   </tr>
+				   
+			   <tr>
+				   <td></td>
+				   <td><img  class="small" alt= "Photo by Jonathan Petersson from Pexels"  src="./photos/CheesyPizza.jpg"></td> <!---- Photo by Jonathan Petersson from Pexels---->
+						   
+				   <td><img  class="small" alt= "Photo by Natasha Filippovskaya from Pexels"  src="./photos/meatypizza.jpg"></td> <!----Photo by Natasha Filippovskaya from Pexels--->
+			   
+				   <td><img  class="small" alt= "Photo by Engin Akyurt from Pexels"  src="./photos/VeggiePizza.jpg"></td> <!-----Photo by Engin Akyurt from Pexels  --->
+					<td></td>
+				 </tr>	
+		   
+					   <tr><th colspan="5" class="mycenter" >Extras ($1.75 each)</th></tr>
+					   <tr><td></td>
+						   <td></td>
+						   <td><input type="checkbox" name="extras" value="Extra-cheese"/>Extra Cheese <br/>	
+								   <input type="checkbox" name="extras" value="Pepperoni"/>Pepperoni<br/>
+									<input type="checkbox" name="extras" value="Mushrooms"/>Mushrooms<br/> 
+								   <input type="checkbox" name="extras" value="Bacon"/>Bacon<br/> 
+									  <input type="checkbox" name="extras" value="Olives"/>Olives<br/>
+								   </td><td></td><td></td>
+							 </tr>																		  
+							
+					 <tr>
+					   <td></td>
+					   <td>Select Size<select id="pizzasize">
+								 <option value="Small">Small-$8.50</option>
+								 <option value="Medium">Medium-$11.50</option>
+								 <option value="Large">Large-$14.00</option>
+								 <option value="Extra-Large">Extra large</option>
+								</select>
+					   </td>
+					   <td>Select Quantity:<input type="number" id="quantity" min="0" max="100" value="0"></td>
+					   <td><input type="button" value="Add to order" onclick="pizzaOrder()"></td>
+					   <td></td>
+				   </tr> 
+		   </table>
+			</div>
+		   
+   <!--Order sandwiches--->
+	   
+	   <div>	
+		   <hr/>
+		   <h2>Sandwiches</h2>
+		   <hr>
+			   <table class="center">
+			   <tr>
+				   <th><input type="radio" name="stype" value="All Garden Vegetarian" id="Garden" checked> Vegetarian - $7.50</th>				   
+				   <th><input type="radio" name="stype" value="Big Beef on a Bun" id="Beef" />Beef on a Bun - $8.50</th>
+				   <th><input type="radio" name="stype" value="Mixed Grill" id="Mixed"/>Mixed Grill - $9.50</th>
+				   <th><input type="radio" name="stype" value="Grilled Pork" id="pork" />Grilled Pork - $9.50 </th>
+			   </tr>
+				   
+			   <tr>
+				   <td><img  class="small" alt= "Photo by The Matter of Food from Unsplash"  src="./photos/veggieSandwich.jpg"></td>  <!----Photo by The Matter of Food from Unsplash--->  
+				   <td><img  class="small" alt= "Photo by Jonathan Borba from Pexels"  src="./photos/BeefSandwich.jpg"></td>   <!---- Photo by Jonathan Borba from Pexels   --->	 
+			   	   <td><img  class="small" alt= "Photo by Rajesh TP from Pexels"  src="./photos/MixedSandwich.jpg"></td> <!---- Photo by Rajesh TP from Pexels   --->
+				   <td><img  class="small" alt= "Photo by Jonathan Borba from Pexel"  src="./photos/porkSandwich.jpg"></td> <!---- Photo by Jonathan Borba from Pexels   --->
+	   			</tr>	
+																 
+				<tr>
+		     	   <td></td>
+				   <td >Select Quantity:<input type="number" id="quantityS" min="0" max="100" value="0"></td>
+				   <td cols><input type="button" value="Add to order" onclick="sandwichOrder()"></td>
+				   <td></td>
+				</tr> 
+		   </table>
+		   
+		   </div>
+   
+   <!-----order drinks   ----->
+	   
+	   <div>	
+		   <hr/>
+			   <h2>Drinks</h2>
+   
+			   <hr> 
+			   <table class= "center">
+			   <tr>
+				   <th><input type="radio" name="dtype" value="Cola" id="Cola" checked> Cola</th>
+				   <th><input type="radio" name="dtype" value="Orange" id="Orange" />Orange</th>
+				   <th><input type="radio" name="dtype" value="Lemon" id="Lemon"/>Lemon</th>
+				   <th><input type="radio" name="dtype" value="Root Beer" id="Root beer" />Root Beer</th>
+			   </tr>
+				   
+			   <tr>
+					<td><img  class="small" alt= "Cola"  src="./photos/Cola.jpg"></td>
+					   <!----https://www.colourbox.com/preview/33905631-set-of-pictures-plastic-bottle-of-coca-cola-sprite-fantasy-orange-soda-flat-vector-illustration.jpg--->
+				   <td><img  class="small" alt= "Orange"  src="./photos/orange.png"></td>
+					   <!----https://www.colourbox.com/preview/33905631-set-of-pictures-plastic-bottle-of-coca-cola-sprite-fantasy-orange-soda-flat-vector-illustration.jpg--->
+				   <td><img  class="small" alt= "Lemon"  src="./photos/lemon.jpg"></td>
+						<!----https://www.colourbox.com/preview/33905631-set-of-pictures-plastic-bottle-of-coca-cola-sprite-fantasy-orange-soda-flat-vector-illustration.jpg--->
+					<td><img  class="small" alt= "RootBeer"  src="./photos/rootBeer.jpg"></td>	   
+					   <!---https://www.colourbox.com/preview/24323541-closeup-frosty-classic-root-beer-glass-with-condensation.jpg--->
+				</tr>	  
+
+				<tr><td></td>
+				   <td>Select Size<select id="drinksize">
+				    	 <option value="Small">Small-$1.25</option>
+					     <option value="Medium">Medium-$1.75</option>
+						 <option value="Large">Large-$2.00</option>
+						 <option value="Extra-Large">Extra large</option>
+					   </select></td>
+					<td>Select Quantity:<input type="number" id="quantityD" min="0" max="100" value="0">
+					<td><input type="button" value="Add to order" onclick="drinkOrder()"></td></tr> 
+				    <td></td>
+		       </table>
+		</div>
+	   
+		   <div class="mycenter">
+			 <hr/>
+			 <input class="square" type="submit" value="Submit order" id="mySubmit" disabled>
+			 <hr>	
+			</div>
+	   
+	   </form>
+	      
+		   <div>		
+			<span id="printOrder"></span>
+		   
+		   </div>	   
+   </body>
+</html>
